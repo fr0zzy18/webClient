@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "RealEstate"
+    }
+  },
+  "defaultProject": "RealEstate",
+  "cli": {
+    "analytics": false
+  }
 }

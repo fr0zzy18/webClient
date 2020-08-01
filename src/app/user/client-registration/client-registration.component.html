@@ -1,0 +1,68 @@
+<div>
+    <h1 class="regheader">Client Registration</h1>
+</div>
+<div class="regform">
+    <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+        <div>
+            <div>
+             <label>First Name</label>
+            </div>
+             <div>
+                <input formControlName="FirstName">
+                <label class="text-danger" *ngIf="service.formModel.get('FirstName').touched && service.formModel.get('FirstName').errors?.required">This field can not be empty.</label>
+             </div>
+        </div>
+        <div>
+            <div>
+                <label>Last Name</label>            
+            </div>
+            <div>
+                <input formControlName="LastName">
+                <label class="text-danger" *ngIf="service.formModel.get('LastName').touched && service.formModel.get('LastName').errors?.required">This field can not be empty.</label>
+            </div>
+       </div>
+       <div>
+             <div>
+                <label>Email</label>
+             </div>
+             <div>
+                <input formControlName="Email">
+                <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.required">This field can not be empty.</label>
+                <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Invalid Email address.</label>
+             </div>
+        </div>
+        <div>
+            <div>
+                <label>Phone number</label>
+            </div>
+            <div>
+                <input formControlName="PhoneNumber">
+                <label class="text-danger" *ngIf="service.formModel.get('PhoneNumber').touched && service.formModel.get('PhoneNumber').errors?.required">This field can not be empty.</label>
+            </div>
+       </div>
+       <div formGroupName="Pwords">
+        <div>
+            <div>
+                <label>Password</label>         
+            </div>
+            <div>
+                <input formControlName="Password" type="password">
+                <label class="text-danger" *ngIf="service.formModel.get('Pwords.Password').touched && service.formModel.get('Pwords.Password').errors?.required">This field can not be empty.</label>
+            </div>
+       </div>
+       <div>
+           <div>
+            <label>Confirm password</label>
+           </div>
+           <div>
+            <input formControlName="ConfirmPassword" type="password">
+            <label class="text-danger" *ngIf="service.formModel.get('Pwords.ConfirmPassword').touched && service.formModel.get('Pwords.ConfirmPassword').errors?.required">This field can not be empty.</label>
+            <label class="text-danger" *ngIf="service.formModel.get('Pwords.ConfirmPassword').touched && service.formModel.get('Pwords.ConfirmPassword').errors?.passwordMismatch">Confirm Password does not match.</label>
+           </div>
+      </div>
+       </div>
+       <div class="regbtn">
+           <button [disabled]="!service.formModel.valid">Registration</button>
+       </div>
+    </form>
+</div>

@@ -1,0 +1,13 @@
+<div class="home">
+    <div *ngIf="userDetails">
+        <ul>
+          <li>First name: {{userDetails.firstName}}</li>
+          <li>Last name: {{userDetails.lastName}}</li>
+          <li>Email: {{userDetails.email}}</li>
+          <li>Phone: {{userDetails.phoneNumber}}</li>
+    </ul>
+    </div>
+    <div>
+        <button (click)="onLogout()" class="home">Log Out</button>
+    </div>
+</div>

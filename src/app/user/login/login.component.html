@@ -1,0 +1,17 @@
+<form #form='ngForm' autocomplete="off" class="logform" (submit)="onSubmit(form)">
+    <div>
+        <label>Email</label>
+    </div>
+    <div>
+        <input #Email="ngModel" name ="Email"[(ngModel)]="formModel.Email" required>
+    </div>
+    <div >
+        <label>Password</label>
+    </div>
+    <div>
+        <input #Password="ngModel" name ="Password"[(ngModel)]="formModel.Password" type="password" required>
+    </div>
+    <div>
+        <button class="loginbtn" [disabled]='!form.valid'>Log In</button>
+    </div>
+</form>
